@@ -5,7 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: FastAPI",
+            "name": "run FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "debug FastAPI",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
@@ -14,6 +25,6 @@
                 "--reload"
             ],
             "jinja": true
-        }
+        }        
     ]
 }

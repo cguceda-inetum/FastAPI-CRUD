@@ -4,6 +4,10 @@ from fastapi import APIRouter
 import os
 from fastapi_sqlalchemy import DBSessionMiddleware
 from api.api_v1.api import api_router
+from dotenv import load_dotenv
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 app = FastAPI()
 app.add_middleware(DBSessionMiddleware, db_url=os.environ["DATABASE_URL"])
